@@ -43,4 +43,11 @@ async findOne(id: number): Promise<Task> {
   }
   return task;
 }
+
+async findByUserId(userId: number): Promise<Task[]> {
+  return this.taskRepository.find({
+    where: { user: { id: userId } },
+    relations: ['user'],
+  });
+}
 }

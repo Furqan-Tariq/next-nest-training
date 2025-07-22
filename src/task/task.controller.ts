@@ -25,4 +25,9 @@ export class TaskController {
 async getTaskById(@Param('id') id: string): Promise<Task> {
   return this.taskService.findOne(Number(id));
 }
+
+@Get('user/:userId')
+async getTasksByUserId(@Param('userId') userId: string): Promise<Task[]> {
+  return this.taskService.findByUserId(Number(userId));
+}
 }
