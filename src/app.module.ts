@@ -5,9 +5,13 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { User } from './user/entities/user.entity';
 import { Task } from './task/entities/task.entity';
+import { UserModule } from './user/user.module';
+import { TaskModule } from './task/task.module';
 
 @Module({
   imports: [
+    UserModule,
+    TaskModule,
     ConfigModule.forRoot({
       isGlobal: true, 
     }),

@@ -25,6 +25,9 @@ export class User {
   @CreateDateColumn()
   created_at: Date;
 
+  @Column({default: 'active'})
+  status: string;
+
   @OneToMany(() => Task, (task) => task.user, { cascade: true })
   tasks: Task[];
 }

@@ -26,6 +26,9 @@ export class Task {
   @CreateDateColumn()
   created_at: Date;
 
+  @Column({ default: 'active' })
+status: string;
+
   @UpdateDateColumn()
   updated_at: Date;
 
